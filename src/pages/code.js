@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 export default () => (
   <Layout>
     <h3>
-      Hey there! Welcome to my site
+      Code blog posts landing page
     </h3>
   </Layout>
 );
