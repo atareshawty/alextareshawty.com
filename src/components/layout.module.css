@@ -1,0 +1,12 @@
+@value colors: "../styles/colors.css";
+@value tuna from colors;
+
+.content {
+  margin: 0 auto;
+  max-width: 1000px;
+  color: tuna;
+}
+
+.content-wrapper {
+  padding: 8px;
+}
