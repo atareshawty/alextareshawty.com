@@ -9,6 +9,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-svg',
+    'gatsby-plugin-remove-trailing-slashes',
     {
       resolve: 'gatsby-plugin-typography',
       options: {

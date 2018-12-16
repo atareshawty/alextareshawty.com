@@ -16,5 +16,8 @@
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.18",
     "typography": "^0.16.18"
+  },
+  "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^2.0.6"
   }
 }
