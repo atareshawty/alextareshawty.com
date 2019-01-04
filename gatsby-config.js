@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     baseRoutes: ['Tech', 'Food', 'FI', 'About',],
     copyrightYear: 2018,
-    email: 'atareshawty@gmail.com',
+    email: 'website@alextareshawty.com',
     githubUrl: 'https://github.com/atareshawty',
     title: 'Alex Tareshawty',
     twitterUrl: 'https://twitter.com/atareshawty',
