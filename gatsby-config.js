@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    baseRoutes: ['Code', 'Food', 'FI', 'About',],
+    baseRoutes: ['Tech', 'Food', 'FI', 'About',],
     copyrightYear: 2018,
     email: 'atareshawty@gmail.com',
     githubUrl: 'https://github.com/atareshawty',
