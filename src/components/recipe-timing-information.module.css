@@ -1,0 +1,34 @@
+@value colors: "../styles/colors.css";
+@value tuna from colors;
+
+.container {
+  min-width: 300px;
+  flex: 1;
+  border: 1px solid tuna;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.header {
+  margin-bottom: 4px;
+}
+
+.cells {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  grid-gap: 8px;
+}
+
+.cell {
+  text-align: center;
+  padding: 8px;
+}
+
+.cellText {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

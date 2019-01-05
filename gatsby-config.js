@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    baseRoutes: ['Code', 'Food', 'FI', 'About',],
+    baseRoutes: ['Tech', 'Food', 'FI', 'About',],
     copyrightYear: 2018,
-    email: 'atareshawty@gmail.com',
+    email: 'website@alextareshawty.com',
     githubUrl: 'https://github.com/atareshawty',
     title: 'Alex Tareshawty',
     twitterUrl: 'https://twitter.com/atareshawty',
@@ -10,6 +10,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-svg',
     'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/data/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {

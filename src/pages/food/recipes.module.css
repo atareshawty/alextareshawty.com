@@ -1,0 +1,14 @@
+.list {
+  margin: 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+}
+
+.list-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
