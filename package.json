@@ -17,6 +17,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.18",
+    "titleize": "^1.0.1",
     "typography": "^0.16.18"
   },
   "devDependencies": {
