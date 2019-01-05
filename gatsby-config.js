@@ -10,6 +10,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-svg',
     'gatsby-plugin-remove-trailing-slashes',
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/data/`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
