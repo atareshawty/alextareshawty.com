@@ -7,7 +7,7 @@ import styles from './recipe-timing-information.module.css';
 const renderTimingInformationCell = cell => (
   <div key={cell.name} className={styles.cell}>
     <div className={styles.cellText}>{titleize(`${cell.name} time`)}</div>
-    <div className={styles.cellText}>{formatMinutes(cell.value)}</div>
+    <div className={styles.cellText}>{formatMinutes(cell.minutes)}</div>
   </div>
 );
 
@@ -15,8 +15,8 @@ const renderTimingInformationCells = cells => {
   const renderedCells = cells.map(renderTimingInformationCell);
 
   if (cells.length > 1) {
-    const totalTime = cells.map(({ value }) => value).reduce((prev, curr) => prev + curr, 0);
-    const totalTimeInfo = { name: 'total', value: totalTime };
+    const totalTime = cells.reduce((acc, { minutes }) => acc + minutes, 0);
+    const totalTimeInfo = { name: 'total', minutes: totalTime };
 
     renderedCells.push(renderTimingInformationCell(totalTimeInfo));
   }

@@ -11,9 +11,9 @@
     },
     "data": {
       "timingInformation": [
-        { "name": "prep", "value": 20 },
-        { "name": "cook", "value": 30 },
-        { "name": "resting", "value": 100  }
+        { "name": "prep", "minutes": 20 },
+        { "name": "cook", "minutes": 30 },
+        { "name": "resting", "minutes": 100  }
       ]
     }
   }

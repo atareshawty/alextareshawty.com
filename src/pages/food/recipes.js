@@ -28,7 +28,7 @@ const compareEdges = (a, b) => a.node.metadata.title.localeCompare(b.node.metada
 const renderRecipeIndex = ({ allRecipesJson: { edges } }) => (
   <Layout>
     <h3>
-      Here are some of my go to recipes!
+      Here are some of my go-to recipes!
     </h3>
     <ul className={styles.list}>
       {edges.sort(compareEdges).map(({ node }) => (
