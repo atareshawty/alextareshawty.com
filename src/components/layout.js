@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import styles from './layout.module.css';
 import Header from './header';
 import Footer from './footer';
 
 export default ({ children }) => (
-  <Fragment>
+  <div className={styles.applicationContainer}>
     <Header />
     <div className={styles.contentWrapper}>
       <div className={styles.content}>
@@ -13,5 +13,5 @@ export default ({ children }) => (
       </div>
     </div>
     <Footer />
-  </Fragment>
+  </div>
 );
