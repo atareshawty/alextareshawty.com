@@ -1,7 +1,8 @@
-const path = require('path');
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path'); // eslint-disable-line import/no-commonjs
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+const { createFilePath } = require('gatsby-source-filesystem'); // eslint-disable-line import/no-commonjs
+
+exports.onCreateNode = ({ node, getNode, actions }) => { // eslint-disable-line import/no-commonjs
   const { createNodeField } = actions;
 
   if (node.internal.type === 'RecipesJson') {
@@ -20,7 +21,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = ({ graphql, actions: { createPage } }) => (
+exports.createPages = ({ graphql, actions: { createPage } }) => ( // eslint-disable-line import/no-commonjs
   graphql(`
     {
       allRecipesJson {

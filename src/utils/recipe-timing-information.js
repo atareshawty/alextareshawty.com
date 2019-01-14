@@ -1,6 +1,6 @@
 const MINUTES_PER_HOUR = 60;
 
-export const formatMinutes = minutes => {
+export default minutes => {
   const hours = Math.floor(minutes / MINUTES_PER_HOUR);
   const newMinutes = minutes % MINUTES_PER_HOUR;
   const minuteString = `${newMinutes} min`;

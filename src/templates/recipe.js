@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
+import IngredientsList from '../components/ingredients-list';
 import Layout from '../components/layout';
 import RecipeTimingInformation from '../components/recipe-timing-information';
-import IngredientsList from '../components/ingredients-list';
 import styles from './recipe.module.css';
 
 const renderCreditLink = credit => {
@@ -18,7 +19,7 @@ const renderCreditLink = credit => {
   return name;
 };
 
-export default props => {
+const Recipe = (props) => {
   const { data: { recipesJson } } = props;
   const { metadata } = recipesJson;
   const data = JSON.parse(recipesJson.fields.data);
@@ -43,6 +44,25 @@ export default props => {
   );
 };
 
+Recipe.propTypes = {
+  data: PropTypes.shape({
+    recipesJson: PropTypes.shape({
+      metadata: PropTypes.shape({
+        date: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        credits: PropTypes.shape({
+          link: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+        }),
+      }),
+      fields: PropTypes.shape({
+        data: PropTypes.string.isRequired,
+      }),
+    }),
+  }),
+};
+
+export default Recipe;
 export const query = graphql`
   query($slug: String!) {
     recipesJson(fields: { slug: { eq: $slug } }) {

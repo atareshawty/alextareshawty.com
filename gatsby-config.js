@@ -1,6 +1,6 @@
-module.exports = {
+module.exports = { // eslint-disable-line import/no-commonjs
   siteMetadata: {
-    baseRoutes: ['Tech', 'Food', 'FI', 'About',],
+    baseRoutes: ['Tech', 'Food', 'FI', 'About'],
     copyrightYear: 2018,
     email: 'website@alextareshawty.com',
     githubUrl: 'https://github.com/atareshawty',

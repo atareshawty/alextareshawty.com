@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import titleize from 'titleize';
 
-import { formatMinutes } from '../utils/recipe-timing-information';
+import formatMinutes from '../utils/recipe-timing-information';
 import styles from './recipe-timing-information.module.css';
 
 const renderTimingInformationCell = cell => (
@@ -24,7 +25,7 @@ const renderTimingInformationCells = cells => {
   return renderedCells;
 };
 
-export default ({ timingInformation }) => (
+const RecipeTimingInformation = ({ timingInformation }) => (
   <div className={styles.container}>
     <h5 className={styles.header}>Timing Information</h5>
     <div className={styles.cells}>
@@ -32,3 +33,12 @@ export default ({ timingInformation }) => (
     </div>
   </div>
 );
+
+RecipeTimingInformation.propTypes = {
+  timingInformation: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    minutes: PropTypes.number.isRequired,
+  })),
+};
+
+export default RecipeTimingInformation;

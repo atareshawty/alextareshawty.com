@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import styles from './footer.module.css';
@@ -48,9 +49,19 @@ const renderFooter = ({ site: { siteMetadata } }) => (
   </footer>
 );
 
-export default () => (
+renderFooter.propTypes = {
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      baseRoutes: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }),
+};
+
+const Footer = () => (
   <StaticQuery
     query={query}
     render={renderFooter}
   />
 );
+
+export default Footer;

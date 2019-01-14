@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import RecipeIngredientAmount from '../models/recipe-ingredient-amount';
 import measurementUnitAbbreviations from '../utils/measurement-unit-abbreviations';
@@ -20,7 +21,7 @@ const renderAmount = (amount, halved) => {
   }
 };
 
-export default ({ amount, halved, name, unit }) => (
+const RecipeIngredient = ({ amount, halved, name, unit }) => (
   <div className={styles.ingredient}>
     <div className={styles.amount}>
       {renderAmount(amount, halved)} {measurementUnitAbbreviations(unit)}
@@ -28,3 +29,14 @@ export default ({ amount, halved, name, unit }) => (
     <div className={styles.name}>{name}</div>
   </div>
 );
+
+RecipeIngredient.propTypes = {
+  amount: PropTypes.oneOfType([
+    PropTypes.arrayOf(RecipeIngredientAmount.propType()),
+    RecipeIngredientAmount.propType(),
+  ]),
+  halved: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  unit: PropTypes.string.isRequired,
+};
+export default RecipeIngredient;

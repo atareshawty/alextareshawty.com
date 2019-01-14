@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, Link, graphql } from 'gatsby';
 
 import styles from './navbar.module.css';
@@ -27,9 +28,19 @@ const renderNavbar = ({ site: { siteMetadata } }) => (
   </nav>
 );
 
-export default () => (
+renderNavbar.propTypes = {
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      baseRoutes: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }),
+};
+
+const Navbar = () => (
   <StaticQuery
     query={query}
     render={renderNavbar}
   />
 );
+
+export default Navbar;
