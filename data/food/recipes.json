@@ -10,6 +10,48 @@
       }
     },
     "data": {
+      "ingredients": [
+        {
+          "name": "instant yeast",
+          "unit": "TEASPOON",
+          "amount": { "numerator": 9, "denominator": 2 }
+        },
+        {
+          "name": "warm water",
+          "unit": "CUP",
+          "amount": { "numerator": 3, "denominator": 4 }
+        },
+        {
+          "name": "warm water",
+          "unit": "CUP",
+          "amount": { "numerator": 8, "denominator": 3 }
+        },
+        {
+          "name": "granulated sugar",
+          "unit": "GRAM",
+          "amount": 50
+        },
+        {
+          "name": "unsalted butter, cubed at room temperature",
+          "unit": "TABLESPOON",
+          "amount": 3
+        },
+        {
+          "name": "salt",
+          "unit": "TABLESPOON",
+          "amount": 1
+        },
+        {
+          "name": "all-purpose flour",
+          "unit": "KILOGRAM",
+          "amount": [1.3, 1.4]
+        },
+        {
+          "name": "unsalted butter, melted for brushing",
+          "unit": "TABLESPOON",
+          "amount": 3
+        }
+      ],
       "timingInformation": [
         { "name": "prep", "minutes": 20 },
         { "name": "cook", "minutes": 30 },

@@ -1,0 +1,11 @@
+.header-container {
+  display: flex;
+  flex-wrap: no-wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  margin: 0;
+  margin-right: 4px;
+}

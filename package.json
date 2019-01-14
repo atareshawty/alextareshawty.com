@@ -6,7 +6,8 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "jest"
   },
   "dependencies": {
     "gatsby": "^2.0.33",
@@ -14,6 +15,7 @@
     "gatsby-plugin-typography": "^2.2.2",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-json": "^2.1.6",
+    "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-typography": "^0.16.18",
@@ -21,6 +23,14 @@
     "typography": "^0.16.18"
   },
   "devDependencies": {
-    "gatsby-plugin-remove-trailing-slashes": "^2.0.6"
+    "@babel/core": "^7.2.2",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-preset-gatsby": "^0.1.6",
+    "gatsby-plugin-remove-trailing-slashes": "^2.0.6",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.6.0",
+    "react-test-renderer": "^16.7.0",
+    "regenerator-runtime": "^0.13.1"
   }
 }

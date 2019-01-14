@@ -1,0 +1,11 @@
+.ingredient {
+  display: flex;
+}
+
+.amount {
+  flex: 1;
+}
+
+.name {
+  flex: 2;
+}
