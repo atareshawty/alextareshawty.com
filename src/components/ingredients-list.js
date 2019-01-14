@@ -23,12 +23,7 @@ export default class IngredientsList extends React.Component {
     measurementsHalved: false,
   };
 
-  constructor() {
-    super();
-    this.toggleMeasurementHalving = this.toggleMeasurementHalving.bind(this);
-  }
-
-  toggleMeasurementHalving() {
+  toggleMeasurementHalving = () => {
     this.setState(({ measurementsHalved }) => ({
       measurementsHalved: !measurementsHalved,
     }));
