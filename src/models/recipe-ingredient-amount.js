@@ -8,7 +8,7 @@ class ExactIntegerAmount {
   }
 
   half() {
-    return new ExactFractionalAmount({ numerator: this._amount, denominator: 2, });
+    return new ExactFractionalAmount({ numerator: this._amount, denominator: 2 });
   }
 
   toString() {
@@ -48,13 +48,13 @@ class ExactFractionalAmount {
     let output = '';
 
     if (wholeNumber !== 0) {
-      output += `${wholeNumber} `
+      output += `${wholeNumber} `;
     }
 
     if (newNumerator !== 0) {
       const simplifiedFraction = this._simplifyFraction(newNumerator, this._denominator);
 
-      output += `${simplifiedFraction.numerator}/${simplifiedFraction.denominator}`
+      output += `${simplifiedFraction.numerator}/${simplifiedFraction.denominator}`;
     }
 
     return output.trim();

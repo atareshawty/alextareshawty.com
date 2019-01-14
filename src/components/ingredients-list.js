@@ -23,7 +23,7 @@ export default class IngredientsList extends React.Component {
     measurementsHalved: false,
   };
 
-  toggleMeasurementHalving = () => {
+  handleMeasurementHalving = () => {
     this.setState(({ measurementsHalved }) => ({
       measurementsHalved: !measurementsHalved,
     }));
@@ -36,12 +36,12 @@ export default class IngredientsList extends React.Component {
       <div className={this.props.className}>
         <div className={styles.headerContainer}>
           <h4 className={styles.header}>Ingredients</h4>
-          <Button onClick={this.toggleMeasurementHalving}>{buttonText}</Button>
+          <Button onClick={this.handleMeasurementHalving}>{buttonText}</Button>
         </div>
         <div>
-          {this.props.ingredients.map((ingredient, index) => (
+          {this.props.ingredients.map(ingredient => (
             <RecipeIngredient
-              key={`${ingredient.name}-${index}`}
+              key={`${ingredient.name}-${Math.random()}`}
               halved={this.state.measurementsHalved}
               {...ingredient}
             />

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../components/layout';
 
-export default () => (
+const About = () => (
   <Layout>
     <h3>
       About Page
@@ -16,3 +16,5 @@ export default () => (
     </div>
   </Layout>
 );
+
+export default About;

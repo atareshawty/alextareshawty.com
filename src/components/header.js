@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql, Link, StaticQuery } from 'gatsby';
 
 import styles from './header.module.css';
@@ -27,9 +28,19 @@ const renderHeader = ({ site: { siteMetadata } }) => (
   </header>
 );
 
-export default () => (
+renderHeader.propTypes = {
+  site: PropTypes.shape({
+    siteMetadata: PropTypes.shape({
+      baseRoutes: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }),
+};
+
+const Header = () => (
   <StaticQuery
     query={query}
     render={renderHeader}
   />
 );
+
+export default Header;

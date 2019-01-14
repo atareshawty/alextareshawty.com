@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import styles from './layout.module.css';
-import Header from './header';
 import Footer from './footer';
+import Header from './header';
+import styles from './layout.module.css';
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <div className={styles.applicationContainer}>
     <Header />
     <div className={styles.contentWrapper}>
@@ -15,3 +16,12 @@ export default ({ children }) => (
     <Footer />
   </div>
 );
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+
+export default Layout;
