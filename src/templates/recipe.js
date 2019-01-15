@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import IngredientsList from '../components/ingredients-list';
+import RecipeInstructionsList from '../components/recipe-instructions-list';
 import Layout from '../components/layout';
 import RecipeTimingInformation from '../components/recipe-timing-information';
 import styles from './recipe.module.css';
@@ -36,8 +37,8 @@ const Recipe = (props) => {
           <RecipeTimingInformation timingInformation={data.timingInformation} />
         </div>
         <div className={styles.listsContainer}>
-          <IngredientsList className={styles.list} ingredients={data.ingredients} />
-          <div className={styles.list}>Instructions go here</div>
+          <IngredientsList className={styles.smallList} ingredients={data.ingredients} />
+          <RecipeInstructionsList className={styles.largeList} instructions={data.instructions} />
         </div>
       </div>
     </Layout>
