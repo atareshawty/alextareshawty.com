@@ -1,0 +1,59 @@
+@value colors: "../styles/colors.css";
+@value ceruleanBlue, grayChateau, vistaWhite from colors;
+
+.container {
+  width: 136px;
+  height: 32px;
+  margin: 0;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+}
+
+.inner-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: inherit;
+  height: inherit;
+}
+
+.inner-container:first-child {
+  background-color: grayChateau;
+  color: vistaWhite;
+}
+
+.second-inner-container {
+  background: ceruleanBlue;
+  color: vistaWhite;
+  clip-path: inset(0 50% 0 0);
+  transition: 0.3s cubic-bezier(0, 0, 0, 1);
+}
+
+.toggleableContainerOn {
+  clip-path: inset(0 50% 0 0);
+  background-color: ceruleanBlue;
+}
+
+.toggleableContainerOff {
+  clip-path: inset(0 0 0 50%);
+  background-color: ceruleanBlue;
+}
+
+.toggleable {
+  width: 50%;
+  position: absolute;
+  height: inherit;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.toggleable:nth-child(1) {
+  right: 0;
+}
+
+.text {
+  margin: auto;
+}
