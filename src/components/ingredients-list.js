@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../components/button';
 import RecipeIngredient from '../components/recipe-ingredient';
 import RecipeIngredientAmount from '../models/recipe-ingredient-amount';
+import ToggleSwitch from '../components/toggle-switch';
 import styles from './ingredients-list.module.css';
 
 export default class IngredientsList extends React.Component {
@@ -30,13 +30,16 @@ export default class IngredientsList extends React.Component {
   }
 
   render() {
-    const buttonText = this.state.measurementsHalved ? 'Full' : 'Half';
-
     return (
       <div className={this.props.className}>
         <div className={styles.headerContainer}>
           <h4 className={styles.header}>Ingredients</h4>
-          <Button onClick={this.handleMeasurementHalving}>{buttonText}</Button>
+          <ToggleSwitch
+            offText="Half"
+            on={!this.state.measurementsHalved}
+            onClick={this.handleMeasurementHalving}
+            onText="Full"
+          />
         </div>
         <div>
           {this.props.ingredients.map(ingredient => (
