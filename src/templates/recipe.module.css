@@ -25,7 +25,13 @@
   flex-wrap: wrap;
 }
 
-.list {
+.large-list {
+  flex: 2;
+  padding: 0 8px;
+  min-width: 350px;
+}
+
+.small-list {
   flex: 1;
   padding: 0 8px;
   min-width: 350px;
