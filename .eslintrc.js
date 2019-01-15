@@ -24,6 +24,7 @@ module.exports = {
       'functions': 'ignore'
     }],
     'jsx-quotes': ['error', 'prefer-double'],
+    'no-unused-vars': 'error',
     'react/boolean-prop-naming': 'off',
     'react/button-has-type': 'warn',
     'react/default-props-match-prop-types': 'off',

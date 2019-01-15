@@ -30,8 +30,6 @@ export default class IngredientsList extends React.Component {
   }
 
   render() {
-    const buttonText = this.state.measurementsHalved ? 'Full' : 'Half';
-
     return (
       <div className={this.props.className}>
         <div className={styles.headerContainer}>
