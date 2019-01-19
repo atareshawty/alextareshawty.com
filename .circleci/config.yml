@@ -13,6 +13,15 @@ jobs:
     steps:
       - checkout
 
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      # Build the production image
+      - run:
+          name: Login to docker hub
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t $DOCKER_REGISTRY/$DOCKER_REPO:$CIRCLE_SHA1 .
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -27,6 +36,9 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      # Actually verify the code
       - run: yarn test
-
       - run: yarn lint
+
+      # Push on success
+      - run: docker push $DOCKER_REGISTRY/$DOCKER_REPO:$CIRCLE_SHA1
