@@ -29,6 +29,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => ( // eslint-disa
           node {
             metadata {
               path
+              headerImageFileName
             }
             fields {
               slug
@@ -46,6 +47,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => ( // eslint-disa
         component: path.resolve('./src/templates/recipe.js'),
         context: {
           slug: node.fields.slug,
+          headerImageFileName: node.metadata.headerImageFileName,
         },
       });
     });

@@ -11,6 +11,8 @@ module.exports = { // eslint-disable-line import/no-commonjs
     'gatsby-plugin-react-svg',
     'gatsby-plugin-remove-trailing-slashes',
     'gatsby-transformer-json',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -22,6 +24,13 @@ module.exports = { // eslint-disable-line import/no-commonjs
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography.js',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: 'images',
       },
     },
   ],

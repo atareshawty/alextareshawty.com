@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, StaticQuery } from 'gatsby';
 
-import CookieSvg from '../../assets/images/cookie-bite-solid.svg';
+import CookieSvg from '../../images/cookie-bite-solid.svg';
 import Layout from '../../components/layout';
 import styles from './recipes.module.css';
 

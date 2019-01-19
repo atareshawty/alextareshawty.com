@@ -1,14 +1,11 @@
-.recipe-header-container {
+.recipe {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-top;
 }
 
-.recipe-header {
+.left-column {
+  flex: 1;
   margin-right: 12px;
-  margin-top: 8px;
-  flex: 2;
-  min-width: 300px;
 }
 
 .recipe-title {
@@ -19,20 +16,23 @@
   margin-bottom: 0;
 }
 
-.lists-container {
-  margin-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.large-list {
-  flex: 2;
-  padding: 0 8px;
+.ingredients-list {
+  margin: 8px 0;
   min-width: 350px;
-}
-
-.small-list {
   flex: 1;
-  padding: 0 8px;
+}
+
+.right-column {
+  flex: 2;
+}
+
+.image {
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.instructions-list {
+  flex: 2;
   min-width: 350px;
+  margin: 8px 0;
 }

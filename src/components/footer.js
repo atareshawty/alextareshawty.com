@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import styles from './footer.module.css';
-import GitHubLogo from '../assets/images/github-brands.svg';
-import MailIcon from '../assets/images/envelope-regular.svg';
-import TwitterIcon from '../assets/images/twitter-brands.svg';
+import GitHubLogo from '../images/github-brands.svg';
+import MailIcon from '../images/envelope-regular.svg';
+import TwitterIcon from '../images/twitter-brands.svg';
 
 const query = graphql`
   query {
