@@ -10,9 +10,10 @@ module.exports = { // eslint-disable-line import/no-commonjs
   plugins: [
     'gatsby-plugin-react-svg',
     'gatsby-plugin-remove-trailing-slashes',
-    'gatsby-transformer-json',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-json',
+    'gatsby-transformer-remark',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -31,6 +32,13 @@ module.exports = { // eslint-disable-line import/no-commonjs
       options: {
         path: `${__dirname}/src/images`,
         name: 'images',
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
       },
     },
   ],

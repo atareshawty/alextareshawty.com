@@ -1,6 +1,6 @@
+import React from 'react';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import React from 'react';
 import { graphql } from 'gatsby';
 
 import IngredientsList from '../components/ingredients-list';
