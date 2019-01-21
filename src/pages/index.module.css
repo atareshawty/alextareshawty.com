@@ -1,0 +1,25 @@
+.header {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.header-block {
+  margin-top: 16px;
+}
+
+.header-link {
+  color: black;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.header-text {
+  margin-bottom: 4px;
+}
+
+.text-block {
+  margin-top: 8px;
+}
