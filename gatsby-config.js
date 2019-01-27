@@ -4,8 +4,13 @@ module.exports = { // eslint-disable-line import/no-commonjs
     copyrightYear: 2019,
     email: 'website@alextareshawty.com',
     githubUrl: 'https://github.com/atareshawty',
+    siteDescription: `
+      Alex Tareshawty is a professional software developer and amateur everything else.
+      He enjoys building everything from scalable cloud infrastructure to beautiful UI.
+    `,
     title: 'Alex Tareshawty',
     twitterUrl: 'https://twitter.com/atareshawty',
+    url: 'https://alextareshawty.com',
   },
   plugins: [
     'gatsby-plugin-react-svg',
@@ -13,6 +18,7 @@ module.exports = { // eslint-disable-line import/no-commonjs
     'gatsby-transformer-json',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',
       options: {

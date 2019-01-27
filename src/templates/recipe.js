@@ -27,7 +27,7 @@ const Recipe = (props) => {
   const data = JSON.parse(recipesJson.fields.data);
 
   return (
-    <Layout>
+    <Layout title={metadata.title} isBlogPost>
       <div className={styles.recipe}>
         <div className={styles.leftColumn}>
           <h1 className={styles.recipeTitle}>{metadata.title}</h1>
