@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 
 const About = () => (
-  <Layout>
+  <Layout title="About" isBlogPost={false}>
     <h3>
       About Page
     </h3>

@@ -27,7 +27,7 @@ const query = graphql`
 const compareEdges = (a, b) => a.node.metadata.title.localeCompare(b.node.metadata.title);
 
 const renderRecipeIndex = ({ allRecipesJson: { edges } }) => (
-  <Layout>
+  <Layout title="Recipes" isBlogPost={false} >
     <h3>
       Here are some of my go-to recipes!
     </h3>

@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '../components/layout';
 
 const FI = () => (
-  <Layout>
+  <Layout title="FI" isBlogPost={false}>
     <h3>
       FI blog posts landing page
     </h3>
