@@ -24,23 +24,23 @@ const query = graphql`
   }
 `;
 
-const compareEdges = (a, b) => a.node.metadata.title.localeCompare(b.node.metadata.title);
+const compareEdges = (a, b) =>
+  a.node.metadata.title.localeCompare(b.node.metadata.title);
+
+const renderRecipeLinks = (edges) =>
+  edges.sort(compareEdges).map(({ node }) => (
+    <div key={node.metadata.path} className={styles.listItem}>
+      <CookieSvg className={styles.listIcon} />
+      <Link to={`${node.fields.slug}${node.metadata.path}`}>
+        {node.metadata.title}
+      </Link>
+    </div>
+  ));
 
 const renderRecipeIndex = ({ allRecipesJson: { edges } }) => (
-  <Layout title="Recipes" isBlogPost={false} >
-    <h3>
-      Here are some of my go-to recipes!
-    </h3>
-    <ul className={styles.list}>
-      {edges.sort(compareEdges).map(({ node }) => (// eslint-disable-line react/prop-types
-        <div key={node.metadata.path} className={styles.listItem}>
-          <CookieSvg className={styles.listIcon} />
-          <Link to={`${node.fields.slug}${node.metadata.path}`}>
-            {node.metadata.title}
-          </Link>
-        </div>
-      ))}
-    </ul>
+  <Layout title="Recipes" isBlogPost={false}>
+    <h3>Here are some of my go-to recipes!</h3>
+    <ul className={styles.list}>{renderRecipeLinks(edges)}</ul>
   </Layout>
 );
 
@@ -60,11 +60,6 @@ renderRecipeIndex.propTypes = {
   }),
 };
 
-const Recipes = () => (
-  <StaticQuery
-    query={query}
-    render={renderRecipeIndex}
-  />
-);
+const Recipes = () => <StaticQuery query={query} render={renderRecipeIndex} />;
 
 export default Recipes;

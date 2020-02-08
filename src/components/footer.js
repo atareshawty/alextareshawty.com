@@ -22,9 +22,7 @@ const query = graphql`
 const renderFooter = ({ site: { siteMetadata } }) => (
   <footer className={styles.footer}>
     <div>
-      <span className={styles.iconLogo}>
-        &#169; {new Date().getFullYear()}
-      </span>
+      <span className={styles.iconLogo}>&#169; {new Date().getFullYear()}</span>
       <a
         href={siteMetadata.githubUrl}
         target="_blank"
@@ -39,9 +37,7 @@ const renderFooter = ({ site: { siteMetadata } }) => (
       >
         <TwitterIcon className={styles.iconLogo} />
       </a>
-      <a
-        href={`mailto:${siteMetadata.email}`}
-      >
+      <a href={`mailto:${siteMetadata.email}`}>
         <MailIcon className={styles.iconLogo} />
       </a>
     </div>
@@ -59,11 +55,6 @@ renderFooter.propTypes = {
   }),
 };
 
-const Footer = () => (
-  <StaticQuery
-    query={query}
-    render={renderFooter}
-  />
-);
+const Footer = () => <StaticQuery query={query} render={renderFooter} />;
 
 export default Footer;

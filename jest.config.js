@@ -1,4 +1,5 @@
-module.exports = { // eslint-disable-line import/no-commonjs
+module.exports = {
+  // eslint-disable-line import/no-commonjs
   transform: {
     '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js',
   },

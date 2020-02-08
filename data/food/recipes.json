@@ -70,7 +70,7 @@
       "timingInformation": [
         { "name": "prep", "minutes": 20 },
         { "name": "cook", "minutes": 30 },
-        { "name": "resting", "minutes": 100  }
+        { "name": "resting", "minutes": 100 }
       ]
     }
   }

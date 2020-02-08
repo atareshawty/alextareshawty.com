@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import styles from './recipe-instructions-list.module.css';
 
 const RecipeInstruction = ({ index, instruction }) => (
-  <div className={styles.instruction}>({index}) {instruction}</div>
+  <div className={styles.instruction}>
+    ({index}) {instruction}
+  </div>
 );
 
 RecipeInstruction.propTypes = {

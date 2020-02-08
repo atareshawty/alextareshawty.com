@@ -11,7 +11,7 @@ const measurementUnitAbbreviations = {
   TEASPOON: 'tsp',
 };
 
-export default measurement => {
+export default (measurement) => {
   const abbreviation = measurementUnitAbbreviations[measurement];
 
   if (abbreviation) {

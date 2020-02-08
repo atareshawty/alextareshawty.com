@@ -6,14 +6,13 @@ import Header from './header';
 import SEO from './seo';
 import styles from './layout.module.css';
 
+// prettier-ignore
 const Layout = ({ children, isBlogPost, title }) => (
   <div className={styles.applicationContainer}>
-    <SEO secondaryTitle={title} isBlogPost={isBlogPost} /> {/* eslint-disable-line react/jsx-pascal-case */}
+    <SEO secondaryTitle={title} isBlogPost={isBlogPost} />{' '} {/* eslint-disable-line react/jsx-pascal-case */}
     <Header />
     <div className={styles.contentWrapper}>
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
     <Footer />
   </div>

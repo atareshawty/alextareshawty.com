@@ -47,14 +47,20 @@ describe('#toString', () => {
     describe('and the numerator is bigger than the denominator', () => {
       describe('and the amount is halfed', () => {
         it('returns the corresponding mixed fraction as a string', () => {
-          const amount = new RecipeIngredientAmount({ numerator: 8, denominator: 3 });
+          const amount = new RecipeIngredientAmount({
+            numerator: 8,
+            denominator: 3,
+          });
 
           expect(amount.half().toString()).toBe('1 1/3');
         });
       });
 
       it('returns the corresponding mixed fraction as a string', () => {
-        const amount = new RecipeIngredientAmount({ numerator: 8, denominator: 3 });
+        const amount = new RecipeIngredientAmount({
+          numerator: 8,
+          denominator: 3,
+        });
 
         expect(amount.toString()).toBe('2 2/3');
       });
@@ -63,14 +69,20 @@ describe('#toString', () => {
     describe('and the numerator is smaller than the denominator', () => {
       describe('and the amount is halfed', () => {
         it('returns the corresponding mixed fraction as a string', () => {
-          const amount = new RecipeIngredientAmount({ numerator: 2, denominator: 3 });
+          const amount = new RecipeIngredientAmount({
+            numerator: 2,
+            denominator: 3,
+          });
 
           expect(amount.half().toString()).toBe('1/3');
         });
       });
 
       it('returns the corresponding mixed number as a string', () => {
-        const amount = new RecipeIngredientAmount({ numerator: 2, denominator: 3 });
+        const amount = new RecipeIngredientAmount({
+          numerator: 2,
+          denominator: 3,
+        });
 
         expect(amount.toString()).toBe('2/3');
       });
@@ -79,14 +91,20 @@ describe('#toString', () => {
     describe('and the numerator is divisible by the denominator', () => {
       describe('and the amount is halfed', () => {
         it('returns the corresponding mixed fraction as a string', () => {
-          const amount = new RecipeIngredientAmount({ numerator: 4, denominator: 2 });
+          const amount = new RecipeIngredientAmount({
+            numerator: 4,
+            denominator: 2,
+          });
 
           expect(amount.half().toString()).toBe('1');
         });
       });
 
       it('returns the corresponding mixed number as a string', () => {
-        const amount = new RecipeIngredientAmount({ numerator: 4, denominator: 2 });
+        const amount = new RecipeIngredientAmount({
+          numerator: 4,
+          denominator: 2,
+        });
 
         expect(amount.toString()).toBe('2');
       });
@@ -95,14 +113,20 @@ describe('#toString', () => {
     describe('and the resulting fraction can be simplified', () => {
       describe('and the amount is halfed', () => {
         it('returns the corresponding mixed fraction as a string', () => {
-          const amount = new RecipeIngredientAmount({ numerator: 6, denominator: 4 });
+          const amount = new RecipeIngredientAmount({
+            numerator: 6,
+            denominator: 4,
+          });
 
           expect(amount.half().toString()).toBe('3/4');
         });
       });
 
       it('returns the corresponding mixed number as a string', () => {
-        const amount = new RecipeIngredientAmount({ numerator: 6, denominator: 4 });
+        const amount = new RecipeIngredientAmount({
+          numerator: 6,
+          denominator: 4,
+        });
 
         expect(amount.toString()).toBe('1 1/2');
       });

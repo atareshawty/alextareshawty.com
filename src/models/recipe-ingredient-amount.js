@@ -8,7 +8,10 @@ class ExactIntegerAmount {
   }
 
   half() {
-    return new ExactFractionalAmount({ numerator: this._amount, denominator: 2 });
+    return new ExactFractionalAmount({
+      numerator: this._amount,
+      denominator: 2,
+    });
   }
 
   toString() {
@@ -44,7 +47,7 @@ class ExactFractionalAmount {
 
   toString() {
     const wholeNumber = Math.floor(this._numerator / this._denominator);
-    const newNumerator = this._numerator - (wholeNumber * this._denominator);
+    const newNumerator = this._numerator - wholeNumber * this._denominator;
     let output = '';
 
     if (wholeNumber !== 0) {
@@ -52,7 +55,10 @@ class ExactFractionalAmount {
     }
 
     if (newNumerator !== 0) {
-      const simplifiedFraction = this._simplifyFraction(newNumerator, this._denominator);
+      const simplifiedFraction = this._simplifyFraction(
+        newNumerator,
+        this._denominator
+      );
 
       output += `${simplifiedFraction.numerator}/${simplifiedFraction.denominator}`;
     }
@@ -85,7 +91,10 @@ export default class RecipeIngredientAmount {
   static propType() {
     return PropTypes.oneOfType([
       PropTypes.number,
-      PropTypes.shape({ numerator: PropTypes.number, denominator: PropTypes.number }),
+      PropTypes.shape({
+        numerator: PropTypes.number,
+        denominator: PropTypes.number,
+      }),
     ]);
   }
 

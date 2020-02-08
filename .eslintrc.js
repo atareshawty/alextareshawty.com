@@ -1,28 +1,26 @@
 module.exports = {
-  'extends': [
-    'plugin:jest/recommended',
-  ],
-  'parser': 'babel-eslint',
-  'plugins': [
-    'react',
-    'jest',
-  ],
-  'settings': {
-    'react': {
-      'version': 'detect',
+  extends: ['plugin:jest/recommended'],
+  parser: 'babel-eslint',
+  plugins: ['react', 'jest'],
+  settings: {
+    react: {
+      version: 'detect',
     },
   },
-  'env': {
-    'node': true,
+  env: {
+    node: true,
   },
-  'rules': {
-    'comma-dangle': ['error', {
-      'arrays': 'always-multiline',
-      'objects': 'always-multiline',
-      'imports': 'never',
-      'exports': 'never',
-      'functions': 'ignore'
-    }],
+  rules: {
+    'comma-dangle': [
+      'error',
+      {
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+        imports: 'never',
+        exports: 'never',
+        functions: 'ignore',
+      },
+    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'no-unused-vars': 'error',
     'react/boolean-prop-naming': 'off',
@@ -37,12 +35,15 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'react/jsx-boolean-value': 'error',
     'react/jsx-child-element-spacing': 'warn',
-    'react/jsx-closing-bracket-location': ['error', { 'selfClosing': false }],
+    'react/jsx-closing-bracket-location': ['error', { selfClosing: false }],
     'react/jsx-closing-tag-location': 'error',
-    'react/jsx-curly-brace-presence': ['error', { 'props': 'never', 'children': 'ignore' }],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { props: 'never', children: 'ignore' },
+    ],
     'react/jsx-curly-spacing': 'error',
     'react/jsx-equals-spacing': 'error',
-    'react/jsx-filename-extension': ['error', { 'extensions': ['.js'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.js'] }],
     'react/jsx-first-prop-new-line': 'off',
     'react/jsx-handler-names': 'error',
     'react/jsx-indent-props': ['error', 2],
@@ -97,6 +98,6 @@ module.exports = {
     'react/sort-comp': 'off',
     'react/sort-prop-types': 'error',
     'react/style-prop-object': 'error',
-    'react/void-dom-elements-no-children': 'error'
+    'react/void-dom-elements-no-children': 'error',
   },
 };

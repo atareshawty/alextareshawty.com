@@ -9,12 +9,14 @@ import RecipeInstructionsList from '../components/recipe-instructions-list';
 import RecipeTimingInformation from '../components/recipe-timing-information';
 import styles from './recipe.module.css';
 
-const renderCreditLink = credit => {
+const renderCreditLink = (credit) => {
   const { name, link } = credit;
 
   if (link !== '') {
     return (
-      <a href={link} target="_blank" rel="noreferrer noopener">{name}</a>
+      <a href={link} target="_blank" rel="noreferrer noopener">
+        {name}
+      </a>
     );
   }
 
@@ -22,7 +24,9 @@ const renderCreditLink = credit => {
 };
 
 const Recipe = (props) => {
-  const { data: { recipesJson } } = props;
+  const {
+    data: { recipesJson },
+  } = props;
   const { metadata } = recipesJson;
   const data = JSON.parse(recipesJson.fields.data);
 
@@ -31,13 +35,24 @@ const Recipe = (props) => {
       <div className={styles.recipe}>
         <div className={styles.leftColumn}>
           <h1 className={styles.recipeTitle}>{metadata.title}</h1>
-          <h6 className={styles.recipeCredit}>Courtesy of: {renderCreditLink(metadata.credits)}</h6>
+          <h6 className={styles.recipeCredit}>
+            Courtesy of: {renderCreditLink(metadata.credits)}
+          </h6>
           <RecipeTimingInformation timingInformation={data.timingInformation} />
-          <IngredientsList className={styles.ingredientsList} ingredients={data.ingredients} />
+          <IngredientsList
+            className={styles.ingredientsList}
+            ingredients={data.ingredients}
+          />
         </div>
         <div className={styles.rightColumn}>
-          <Img className={styles.image} fluid={props.data.headerImage.childImageSharp.fluid} />
-          <RecipeInstructionsList className={styles.instructionsList} instructions={data.instructions} />
+          <Img
+            className={styles.image}
+            fluid={props.data.headerImage.childImageSharp.fluid}
+          />
+          <RecipeInstructionsList
+            className={styles.instructionsList}
+            instructions={data.instructions}
+          />
         </div>
       </div>
     </Layout>

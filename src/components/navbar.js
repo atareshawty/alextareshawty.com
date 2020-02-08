@@ -17,11 +17,7 @@ const query = graphql`
 const renderNavbar = ({ site: { siteMetadata } }) => (
   <nav>
     {siteMetadata.baseRoutes.map((route) => (
-      <Link
-        key={route}
-        to={`/${route.toLowerCase()}`}
-        className={styles.link}
-      >
+      <Link key={route} to={`/${route.toLowerCase()}`} className={styles.link}>
         <span className={styles.linkText}>{route}</span>
       </Link>
     ))}
@@ -36,11 +32,6 @@ renderNavbar.propTypes = {
   }),
 };
 
-const Navbar = () => (
-  <StaticQuery
-    query={query}
-    render={renderNavbar}
-  />
-);
+const Navbar = () => <StaticQuery query={query} render={renderNavbar} />;
 
 export default Navbar;

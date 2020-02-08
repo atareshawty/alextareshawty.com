@@ -1,4 +1,5 @@
-module.exports = { // eslint-disable-line import/no-commonjs
+module.exports = {
+  // eslint-disable-line import/no-commonjs
   siteMetadata: {
     baseRoutes: ['Tech', 'Food', 'FI', 'About'],
     email: 'website@alextareshawty.com',
