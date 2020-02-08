@@ -11,7 +11,6 @@ const query = graphql`
   query {
     site {
       siteMetadata {
-        copyrightYear
         email
         githubUrl
         twitterUrl
@@ -24,7 +23,7 @@ const renderFooter = ({ site: { siteMetadata } }) => (
   <footer className={styles.footer}>
     <div>
       <span className={styles.iconLogo}>
-        &#169; {siteMetadata.copyrightYear}
+        &#169; {new Date().getFullYear()}
       </span>
       <a
         href={siteMetadata.githubUrl}
