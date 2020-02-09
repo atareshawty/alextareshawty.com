@@ -16,6 +16,9 @@ jobs:
     - name: Lint
       run: docker run test yarn lint
 
+    - name: Format check
+      run: docker run test yarn format:check
+
     - name: Test
       run: docker run test yarn test
 
