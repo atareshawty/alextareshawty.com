@@ -12,7 +12,9 @@ export default class ToggleSwitch extends React.Component {
   };
 
   render() {
-    const toggleableContainerStyle = this.props.on ? styles.toggleableContainerOn : styles.toggleableContainerOff;
+    const toggleableContainerStyle = this.props.on
+      ? styles.toggleableContainerOn
+      : styles.toggleableContainerOff;
 
     return (
       <div className={styles.container} onClick={this.props.onClick}>
@@ -24,7 +26,9 @@ export default class ToggleSwitch extends React.Component {
             <div className={styles.text}>{this.props.onText}</div>
           </div>
         </div>
-        <div className={`${styles.innerContainer} ${styles.secondInnerContainer} ${toggleableContainerStyle}`}>
+        <div
+          className={`${styles.innerContainer} ${styles.secondInnerContainer} ${toggleableContainerStyle}`}
+        >
           <div className={styles.toggleable}>
             <div className={styles.text}>{this.props.offText}</div>
           </div>

@@ -16,8 +16,9 @@ const query = graphql`
   }
 `;
 
+// prettier-ignore
 const RenderSEO = ({ isBlogPost, secondaryTitle }) => ({ site }) => { // eslint-disable-line react/display-name, react/prop-types
-  const title = `${site.siteMetadata.title} · ${secondaryTitle}`
+  const title = `${site.siteMetadata.title} · ${secondaryTitle}`;
   const description = site.siteMetadata.siteDescription;
 
   return (
@@ -37,7 +38,11 @@ const RenderSEO = ({ isBlogPost, secondaryTitle }) => ({ site }) => { // eslint-
   );
 };
 
-const SEO = props => <StaticQuery query={query} render={RenderSEO(props)} />;
+RenderSEO.propTypes = {
+  site: PropTypes.object,
+};
+
+const SEO = (props) => <StaticQuery query={query} render={RenderSEO(props)} />;
 
 SEO.propTypes = {
   isBlogPost: PropTypes.bool.isRequired,

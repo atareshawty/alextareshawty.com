@@ -9,14 +9,16 @@ import styles from './ingredients-list.module.css';
 export default class IngredientsList extends React.Component {
   static propTypes = {
     className: PropTypes.string.isRequired,
-    ingredients: PropTypes.arrayOf(PropTypes.shape({
-      amount: PropTypes.oneOfType([
-        PropTypes.arrayOf(RecipeIngredientAmount.propType()),
-        RecipeIngredientAmount.propType(),
-      ]),
-      name: PropTypes.string.isRequired,
-      unit: PropTypes.string.isRequired,
-    })).isRequired,
+    ingredients: PropTypes.arrayOf(
+      PropTypes.shape({
+        amount: PropTypes.oneOfType([
+          PropTypes.arrayOf(RecipeIngredientAmount.propType()),
+          RecipeIngredientAmount.propType(),
+        ]),
+        name: PropTypes.string.isRequired,
+        unit: PropTypes.string.isRequired,
+      })
+    ).isRequired,
   };
 
   state = {
@@ -27,7 +29,7 @@ export default class IngredientsList extends React.Component {
     this.setState(({ measurementsHalved }) => ({
       measurementsHalved: !measurementsHalved,
     }));
-  }
+  };
 
   render() {
     return (
@@ -42,7 +44,7 @@ export default class IngredientsList extends React.Component {
           />
         </div>
         <div>
-          {this.props.ingredients.map(ingredient => (
+          {this.props.ingredients.map((ingredient) => (
             <RecipeIngredient
               key={`${ingredient.name}-${Math.random()}`}
               halved={this.state.measurementsHalved}

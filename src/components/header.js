@@ -19,9 +19,7 @@ const renderHeader = ({ site: { siteMetadata } }) => (
   <header className={styles.header}>
     <div className={styles.contentWrapper}>
       <Link to="/" className={styles.titleLink}>
-        <h1 className={styles.titlebar}>
-          {siteMetadata.title}
-        </h1>
+        <h1 className={styles.titlebar}>{siteMetadata.title}</h1>
       </Link>
       <Navbar />
     </div>
@@ -36,11 +34,6 @@ renderHeader.propTypes = {
   }),
 };
 
-const Header = () => (
-  <StaticQuery
-    query={query}
-    render={renderHeader}
-  />
-);
+const Header = () => <StaticQuery query={query} render={renderHeader} />;
 
 export default Header;

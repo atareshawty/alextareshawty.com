@@ -5,14 +5,14 @@ import titleize from 'titleize';
 import formatMinutes from '../utils/recipe-timing-information';
 import styles from './recipe-timing-information.module.css';
 
-const renderTimingInformationCell = cell => (
+const renderTimingInformationCell = (cell) => (
   <div key={cell.name} className={styles.cell}>
     <div className={styles.cellText}>{titleize(`${cell.name} time`)}</div>
     <div className={styles.cellText}>{formatMinutes(cell.minutes)}</div>
   </div>
 );
 
-const renderTimingInformationCells = cells => {
+const renderTimingInformationCells = (cells) => {
   const renderedCells = cells.map(renderTimingInformationCell);
 
   if (cells.length > 1) {
@@ -35,10 +35,12 @@ const RecipeTimingInformation = ({ timingInformation }) => (
 );
 
 RecipeTimingInformation.propTypes = {
-  timingInformation: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    minutes: PropTypes.number.isRequired,
-  })),
+  timingInformation: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      minutes: PropTypes.number.isRequired,
+    })
+  ),
 };
 
 export default RecipeTimingInformation;
