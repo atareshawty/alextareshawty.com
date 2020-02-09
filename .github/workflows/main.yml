@@ -40,7 +40,7 @@ jobs:
       run: docker push $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA
 
     - name: Push latest
-      if: ${{ env.GITHUB_REF == 'master' }}
+      if: github.ref == 'refs/heads/master'
       env:
         DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
         DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
