@@ -52,7 +52,10 @@ const renderFooter = ({ site: { siteMetadata } }) => (
 renderFooter.propTypes = {
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
-      baseRoutes: PropTypes.arrayOf(PropTypes.string),
+      copyrightYear: PropTypes.string,
+      email: PropTypes.string,
+      githubUrl: PropTypes.string,
+      twitterUrl: PropTypes.string,
     }),
   }),
 };

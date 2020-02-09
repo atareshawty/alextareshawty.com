@@ -31,7 +31,7 @@ const renderHeader = ({ site: { siteMetadata } }) => (
 renderHeader.propTypes = {
   site: PropTypes.shape({
     siteMetadata: PropTypes.shape({
-      baseRoutes: PropTypes.arrayOf(PropTypes.string),
+      title: PropTypes.string,
     }),
   }),
 };
