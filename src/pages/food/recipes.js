@@ -32,7 +32,7 @@ const renderRecipeIndex = ({ allRecipesJson: { edges } }) => (
       Here are some of my go-to recipes!
     </h3>
     <ul className={styles.list}>
-      {edges.sort(compareEdges).map(({ node }) => (
+      {edges.sort(compareEdges).map(({ node }) => (// eslint-disable-line react/prop-types
         <div key={node.metadata.path} className={styles.listItem}>
           <CookieSvg className={styles.listIcon} />
           <Link to={`${node.fields.slug}${node.metadata.path}`}>
