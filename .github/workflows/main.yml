@@ -27,13 +27,26 @@ jobs:
         echo Building with docker version $(docker --version)
         docker build -t $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA .
 
+    - name: Docker Login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+        DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+      run: echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+
     - name: Docker Push To Production
       env:
-        DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
         DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
         DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      run: docker push $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA
+
+    - name: Push latest
+      if: ${{ env.GITHUB_REF == 'master' }}
+      env:
+        DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+        DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
       run: |
-        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-        docker push $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA
-        docker logout
+        docker tag $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA $DOCKER_REGISTRY/$DOCKER_REPO:latest
+        docker push $DOCKER_REGISTRY/$DOCKER_REPO:latest
+
+    - name: Docker logout
+      run: docker logout
