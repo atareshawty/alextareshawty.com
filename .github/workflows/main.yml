@@ -1,0 +1,39 @@
+---
+name: CI
+on: [push]
+jobs:
+  ci:
+    name: Docker Build For Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Docker Build Test
+      run: |
+        echo Building with docker version $(docker --version)
+        docker build --target test -t test .
+
+    - name: Lint
+      run: docker run test yarn lint
+
+    - name: Test
+      run: docker run test yarn test
+
+    - name: Docker Build For Production
+      env:
+        DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
+        DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+      run: |
+        echo Building with docker version $(docker --version)
+        docker build -t $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA .
+
+    - name: Docker Push To Production
+      env:
+        DOCKER_PASS: ${{ secrets.DOCKER_PASS }}
+        DOCKER_REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
+        DOCKER_REPO: ${{ secrets.DOCKER_REPO }}
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      run: |
+        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+        docker push $DOCKER_REGISTRY/$DOCKER_REPO:$GITHUB_SHA
+        docker logout
