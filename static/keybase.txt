@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/atareshawty
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://alextareshawty.com
+  * I am atareshawty (https://keybase.io/atareshawty) on keybase.
+  * I have a public key ASB5p9eKuBZtlbDuCUvfWCObYaR-3js4kusxE5PGBQa0vwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101fb84aad5ad8ae3a3a6279472aefe9b7c567c5b18ab32483c5e7565f4af5e992b0a",
+      "host": "keybase.io",
+      "kid": "012079a7d78ab8166d95b0ee094bdf58239b61a47ede3b3892eb311393c60506b4bf0a",
+      "uid": "75d06eb15b01e27075e687a9db626819",
+      "username": "atareshawty"
+    },
+    "merkle_root": {
+      "ctime": 1768869679,
+      "hash": "d749ca8d42237c12f147e67a4b5ed57022ceae8e748c30813f3af74f996ad485ab96e9fda580c60d52abc1334d9ee0e28f72de06691242e2b4445e7acb2b9e03",
+      "hash_meta": "6ef8d780a0d9836c075a3d6a3fe38cf512e2033206b458c30c70d125791677d8",
+      "seqno": 27356723
+    },
+    "service": {
+      "entropy": "B4T3iD+wbwTv/3+hGaz7slwW",
+      "hostname": "alextareshawty.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1768869781,
+  "expire_in": 504576000,
+  "prev": "2f4a9876c8fa6c0a65064e638ea629fe3e97908aef2240d6604376b4ade6d30b",
+  "seqno": 58,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeafXirgWbZWw7glL31gjm2Gkft47OJLrMROTxgUGtL8Kp3BheWxvYWTESpcCOsQgL0qYdsj6bAplBk5jjqYp/j6XkIrvIkDWYEN2tK3m0wvEIJFuKw7gh1cBvTZcBSf0HXMurzkzLevw9XcGuvdnaC9JAgHCo3NpZ8RALQXnTeH3a55KTnfp10BnOtjn5RYn2qeCE6XmLXJP8ptHctl+c6C0Zy4SGtFMm16MaO4HKTfVXzlh4VEmw1yKDKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJmk+THkP5pFgFldkOMszeEvafJYX8uO07GmzvWtlCs+o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/atareshawty
+
+==================================================================
